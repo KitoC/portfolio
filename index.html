@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <script src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+</head>
+
+
+<body onload="startTime(); hintBox();">
+  <p class="under-construction">Note: Website is still under construction. Some functions don't work yet. Please contact me if you have Q's. <br>(click me to hide)</br></p>
+  <div class="center">
+    <div class="mobile">
+      <div class="info-box">
+      </div>
+      <div class="screen empty-screen">
+      </div>
+      <!-- Loading screen. -->
+      <div class="screen loading-screen">
+        <div class="binarygrid">
+          <div class="binary">
+            <h2 class="n k m">K</h2>
+            <h2 class="bin k">01001011</h2>
+            <h2 class="n i">I</h2>
+            <h2 class="bin i">01101001</h2>
+            <h2 class="n t">T</h2>
+            <h2 class="bin t">01110100</h2>
+            <h2 class="n o">O</h2>
+            <h2 class="bin o">01101111</h2>
+          </div>
+          <div class="binarylast">
+            <h2 class="n c">C</h2>
+            <h2 class="bin c">01000011</h2>
+            <h2 class="n l">L</h2>
+            <h2 class="bin l">01101100</h2>
+            <h2 class="n a">A</h2>
+            <h2 class="bin a">01100001</h2>
+            <h2 class="n r">R</h2>
+            <h2 class="bin r">01110010</h2>
+            <h2 class="n bro">K</h2>
+            <h2 class="bin bro">01101011</h2>
+          </div>
+
+          <div class="Iam">
+            <b>
+              <div class="scroll">
+                WEB DEVELOPER.
+                <br /> PROGRAMMER.
+                <br /> CREATIVE.
+                <br /> ENTREPENEUR.
+                <br /> KIND COOL GUY.
+              </div>
+            </b>
+          </div>
+        </div>
+
+      </div>
+      <!-- Home screen. -->
+
+      <div class="headGrid hide">
+        <div class="cell"></div>
+        <div>
+          <div id="time" class="time"></div>
+        </div>
+        <div class="battery">
+          <div class="percent">100%</div>
+          <div class="bb">
+          </div>
+          <div class="be"></div>
+        </div>
+      </div>
+      <div id="home" class="screen home-screen">
+        <div class="menu-buttons">
+          <div class="gallery button-tile">
+            <i class="fas fa-envelope   iconSVG-hidden" data-fa-transform="down-4 right-4 grow-2"></i>
+            <p>Gallery</p>
+          </div>
+          <div class="linkedin button-tile">
+            <a href="https://www.linkedin.com/in/kito-clark-793029157/" target="_blank"></a>
+            <p>LinkedIn</p>
+          </div>
+          <div class="github button-tile">
+            <a href="https://github.com/KitoC" target="_blank"></a>
+            <p>GitHub</p>
+          </div>
+          <div class="facebook button-tile">
+            <a href="https://www.facebook.com/kitoclark1989" target="_blank"></a>
+            <p>facebook</p>
+          </div>
+
+
+        
+          <div class="home-popup projects button-tile">
+            <div class="project-b-overlay"></div>
+            <div class="home-projects">
+              <div v-on:click="projectOverlay(project)" v-for="project in allProjects" class="button-tile project-tiles" v-bind:style="{backgroundImage: 'url(' + project.tileImage + ')' }"
+                v-bind:data="project.id">
+                <p>{{ project.title }}</p>
+              </div>
+            </div>
+            <p class="h-b-title">Portfolio</p>
+          </div>
+
+
+
+
+          
+
+        
+
+
+
+          <div class="main-menu-tiles">
+            <div class="contact button-tile bottom-tiles">
+              <i class="fas fa-phone   iconSVG" data-fa-transform="flip-h down-4 right-4"></i>
+              <p>Contact</p>
+            </div>
+
+            <div class="email button-tile bottom-tiles">
+              <i class="fas fa-comment   iconSVG-hidden" data-fa-transform="down-4 right-4 grow-2"></i>
+              <p>Messages</p>
+            </div>
+            <div class="about button-tile bottom-tiles">
+              <i class="fas fa-envelope   iconSVG-hidden" data-fa-transform="down-4 right-4 grow-2"></i>
+              <p>About</p>
+            </div>
+            <div class="portfolio button-tile bottom-tiles">
+              <a href="https://www.projectknow.com/research/video-game-addiction/" target="_blank"></a>
+              <i class="fas fa-folder   iconSVG-hidden" data-fa-transform="down-4 right-4 grow-2"></i>
+              <p>Fortnite</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="blur_bg">
+          <div class="blur_effect"></div>
+        </div>
+        <div class="full-bg-blur">
+        </div>
+        <p class="tile-title tt">Portfolio</p>
+      </div>
+      <!-- Gallery(photos) screen. -->
+      <div class="screen gallery-screen">
+        <div class="topicons">
+          <div class="plus"></div>
+          <div class="r-icons">
+            <div class="S">
+              <i class="fas fa-search"></i>
+            </div>
+            <div class="E">
+              <p>Edit</p>
+            </div>
+          </div>
+        </div>
+        <div class="album-word">
+          <p>Albums</p>
+        </div>
+
+
+
+        <!-- This holds the html for the image section of the gallery -->
+        <div class="albums">
+          <div class="album">
+            <div class="album-img"></div>
+            <h4>Camera Roll</h4>
+            <p>0</p>
+          </div>
+          <div class="album">
+            <div class="album-img"></div>
+            <h4>Favourites</h4>
+            <p>0</p>
+          </div>
+          <div class="album">
+            <div class="h">
+              <div></div>
+            </div>
+            </a>
+            <h4>Hidden</h4>
+            <p>1</p>
+          </div>
+        </div>
+
+        <!-- This is the bottom bar section -->
+        <div class="bottombar">
+          <div class="icons bbphotos">
+            <p>Photos</p>
+          </div>
+          <div class="icons bbmemories">
+            <p>Memories</p>
+          </div>
+          <div class="icons bbcloud">
+            <p>Shared</p>
+          </div>
+          <div class="icons bbgallery">
+            <p class="bbgword">Albums</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Portfolio screen. -->
+      <div class="screen portfolio-screen">
+        <div class="polaroid-heading">
+          <h3>Click a photo to take a closer look.</h3>
+        </div>
+
+        <div class="polaroid-container">
+          <div class="polaroids-t">
+
+          </div>
+        </div>
+      </div>
+      <!-- About screen. -->
+      <div class="screen about-screen">
+        <div class="headGrid-about">
+        </div>
+        <!-- Text at top -->
+        <div class="top_about">
+          <p class="arrow">&#10094;</p>
+          <p class="notes_about">Notes</p>
+          <div class="icon-tb1"></div>
+          <div class="icon-tb2"></div>
+        </div>
+
+        <main class="about-main">
+          <p> Hi,
+            <br> I'm Kito and I'm a budding developer.
+            <br>
+            <br> My focus is on becoming a full stack developer as I am passionate about design and asthetics but believe in
+            functionality and wan't to cultivate a more technically minded approach.
+            <br>
+            <br> I enrolled in a coding bootcamp in February 2018 without realising the grip that programming would take on my
+            life. I wasn't so sure it would be for me, but when I sat down for my first class and learnt a single line of
+            Ruby code I was instantly hooked. If I could inject code into my arms I would... o_0.
+            <br>
+            <br> I grew up in Byron Bay (I swear I don't smell... too much...) where I was instilled with an alternative perception
+            on life so I believe in environment and sustainabilty firmly. I am motivated to make a change in the way we do
+            things and I think that technology is the pathway in which I can achieve this. </p>
+
+
+
+        </main>
+        <footer>
+          <div class="bottombar-about">
+            <div class="icon-bb-i">
+              <img src="styles/images/about-trash-i.png" class="about-i">
+            </div>
+            <div class="icon-bb-i">
+              <img src="styles/images/about-tick-i.png" , class="about-i">
+            </div>
+            <div class="icon-bb-i">
+              <img src="styles/images/about-plus-i.png" , class="about-i">
+            </div>
+            <div class="icon-bb-i">
+              <img src="styles/images/about-pencil-i.png" , class="about-i">
+            </div>
+            <div class="icon-bb-i">
+              <img src="styles/images/about-write-i.png" , class="about-i">
+            </div>
+          </div>
+          <!-- <div class="bottombar"> -->
+          <!-- <p class="icont">mesage</p>
+<p class="icont">call</p>
+<p class="icont">WhatsApp</p>
+<p class="icont">mail</p> -->
+          <!-- </div> -->
+        </footer>
+      </div>
+      <!-- Contact screen. -->
+      <div class="screen contact-screen">
+        <!-- Text at top -->
+        <div class="top">
+          <p class="arrow">&#10094;</p>
+          <p class="cont">Contacts</p>
+          <p class="edit">Edit</p>
+        </div>
+        <!-- Image -->
+        <div class="img-container">
+          <div class="img-contact"></div>
+        </div>
+        <!-- My Name -->
+        <div class="name-contact">
+          <h3>Kito Clark</h3>
+        </div>
+        <!-- Blue icons & text -->
+        <div class="icons-contact">
+
+          <div>
+            <div class="icon-contact">
+              <i class="fas fa-comment iconsSV-contact"></i>
+            </div>
+            <p class="icont">mesage</p>
+          </div>
+          <div>
+            <div class="icon-contact">
+              <i class="fas fa-phone fa-1x iconsSV-contact" data-fa-transform="flip-h"></i>
+            </div>
+            <p class="icont">call</p>
+          </div>
+          <div>
+            <div class="icon-contact">
+              <i class="fas fa-video fa-1x iconsSV-contact"></i>
+            </div>
+            <p class="icont">WhatsApp</p>
+          </div>
+          <div>
+            <div class="icon-contact">
+              <i class="fas fa-envelope fa-1x iconsSV-contact"></i>
+            </div>
+            <p class="icont">mail</p>
+          </div>
+        </div>
+
+
+        <main class="main-contact">
+          <div class="contact-details">
+            <p class="black">mobile</p>
+            <p>0447 129 723</p>
+          </div>
+          <div class="contact-details">
+            <p class="black">email</p>
+            <p>kitoclark1989@gmail.com</p>
+          </div>
+        </main>
+
+        <footer>
+          <div class="bottombar-contact">
+            <div>
+              <div class="icon-bb">
+                <div class="fa fa-star"></div>
+              </div>
+              <p class="icont">Favourites</p>
+            </div>
+            <div>
+              <div class="icon-bb">
+                <div class="clock">&#9499;</div>
+              </div>
+              <p class="icont">Recents</p>
+            </div>
+            <div>
+              <div class="icon-bb-i">
+                <img src="styles/images/contact_people_icon.png" class="contact-people-i">
+              </div>
+              <p class="icont about-i-active">Contacts</p>
+            </div>
+            <div>
+              <div class="icon-bb-i">
+                <img src="styles/images/contact-keypad-i.png" class="contact-people-i">
+              </div>
+              <p class="icont">Keypad</p>
+            </div>
+            <div>
+              <div class="icon-bb-i">
+                <img src="styles/images/contact-voicemail-i.png" class="contact-people-i">
+              </div>
+              <p class="icont">Voicemail</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+
+      <div class="screen project-screen">
+        <div id="projectScreen" class=project-overlay>
+          <p class="project-close-b">&times;</p>
+
+          <div class="project-images">
+            <div v-for="image in currentProjectImages" v-bind:data-id="currentId" class="lge-project-frame img-${i}">
+              <div class="lge-project-img" v-bind:style="{backgroundImage: 'url(' + image + ')' }">
+                <h3 class="texta">{{title}}</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="image-dir">
+            <p class="i-one">&#9679;</p>
+            <p class="i-two">&#9679;</p>
+            <p class="i-three">&#9679;</p>
+          </div>
+          <div class="project-text">
+            <div class="link-container">
+              <button class="project-link-b" v-bind:style="color">
+                <a class="project-link" v-bind:href="currentProjectLink">{{currentLinkTag}}</a>
+              </button>
+            </div>
+            <p class='project-description'>{{ currentText }}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="home"></div>
+    <div class="inner"></div>
+    <ul class="volume">
+      <li></li>
+      <li></li>
+    </ul>
+    <ul class="silent">
+      <li></li>
+    </ul>
+    <ul class="sleep">
+      <li></li>
+    </ul>
+    <div class="tag"></div>
+  </div>
+
+  </div>
+
+  <script>
+    if ($(document).width() <= 600) {
+      $(".home-screen").addClass('active');
+      $(".headGrid").removeClass('hide');
+      $(".info-box").removeClass('info-b-active');
+    }
+
+    // if ($(document).width() <= 600) {
+    //   setTimeout(function() {
+    //     $(".loading-screen").addClass('active');
+    //     $(".bin").addClass('b');
+    //     $(".n").addClass('name');
+    //     $(".scroll").addClass('innerIam');
+    //   }, 0);
+    //   setTimeout(function() {
+    //     $(".home-screen").addClass('active');
+    //     $(".loading-screen").removeClass('active');
+    //       }, 16000);
+    // }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script type="text/javascript" src="projects.js"></script>
+  <script src="app.js"></script>
+
+
+
+</body>
+
+</html>

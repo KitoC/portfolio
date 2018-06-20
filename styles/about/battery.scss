@@ -1,0 +1,10 @@
+.batt_black {
+  color: black;
+  .bb::after {
+    background-color: black;
+  }
+}
+
+.batt_bg_white {
+  background-color: $opaque_white;
+}

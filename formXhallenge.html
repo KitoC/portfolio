@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+    <script>
+        function createProductCodeForm(parent) {
+            var form = $("<form/>");
+            form.append($("<label>").text('Product Code:'));
+            form.append($("<input>").attr('name', 'productCode').attr('type', 'text'));
+
+            form.append($("<label>").attr('name', 'hint').text('The product code can be found on the label.'));
+
+            form.append('<br>');
+            form.append($("<input>").attr('type', 'submit'));
+            parent.append(form);
+
+            $('label[name=hint]').hide()
+            
+            $('input[name=productCode]').on('focus', function () {
+                $('label[name=hint]').show()
+            })
+            $('input[name=productCode]').on('focusout', function () {
+                $('label[name=hint]').hide()
+            })
+        }
+        createProductCodeForm($('body'))
+    </script>
+</body>
+
+</html>
